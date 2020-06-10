@@ -10,9 +10,17 @@ const products = [];
 
 // /admin/add-product => GET
 router.get('/add-product', (req, res, next) => {
-    res.sendFile(
-        path.join(rootDir, 'views','add-product.html')
-    );
+    // res.sendFile(
+    //     path.join(rootDir, 'views','add-product.html')
+    // );
+    // ***** pug
+    res.render('add-product', {
+        pageTitle: 'Add product',
+        path: '/admin/add-product',
+        formsCSS: true,
+        productsCSS: true,
+        activeAddProduct: true
+    });
 });// to add middlewares, next param is a function
 
 // /admin/add-product => POST
