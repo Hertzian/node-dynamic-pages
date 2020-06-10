@@ -13,12 +13,16 @@ const app = express();
 // ***** handlebars
 // first instance without layouts
 // app.engine('hbs', expressHbs({defaultLayout: ''}));
-app.engine('hbs', expressHbs({
-    layoutsDir: 'views/layouts/',
-    defaultLayout: 'main-layout',
-    extname: 'hbs'
-}));
-app.set('view engine', 'hbs');
+// app.engine('hbs', expressHbs({
+//     layoutsDir: 'views/layouts/',
+//     defaultLayout: 'main-layout',
+//     extname: 'hbs'
+// }));
+// app.set('view engine', 'hbs');
+// app.set('views', 'views');
+
+// ***** ejs
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const adminData = require('./routes/admin');
